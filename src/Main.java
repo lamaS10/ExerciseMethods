@@ -75,7 +75,9 @@ public class Main {
 
     //Method check number if it's + or -
     public static void checkNumber(int num){
-        if(num>=0){
+        if(num==0){
+            System.out.println("The number ("+num+") is zero");
+        } else if(num>0){
             System.out.println("The number ("+num+") is positive");
         }else {
             System.out.println("The number ("+num+") is negative");
