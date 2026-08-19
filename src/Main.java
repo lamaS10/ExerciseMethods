@@ -91,10 +91,14 @@ public class Main {
             System.out.println("The password must have at least 10 characters!!");
             isValid=false;
         }
-        if(password.contains("@")||password.contains("!")||password.contains("#")||password.contains("$")||password.contains("%")||password.contains("^")||password.contains("&")||password.contains("*")){
-            System.out.println("The password consists of only letters and digits!!");
-            isValid=false;
+        for (int i = 0; i < password.length(); i++) {
+            if (!Character.isLetterOrDigit(password.charAt(i))) {
+                System.out.println("The password consists of only letters and digits!!");
+                isValid=false;
+                break;
+            }
         }
+
         //حتى اتحقق ان فيه رقمين اول شي يكون فيه عداد حتى يحسب كم رقم فيه وبعدين ادخل لوب حتى اتحقق من كل حرف في باسورد وبعدها اتحقق اذا حرف رقم زيد عداد بواحد
         int countDigit=0;
         for (int i = 0; i < password.length(); i++) {
